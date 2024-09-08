@@ -1,0 +1,24 @@
+{
+  "name": "vitepress-build-boilerplate",
+  "version": "0.0.1",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --open",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "vite",
+    "vue",
+    "vitepress"
+  ],
+  "author": "ajiho",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.3.4",
+    "medium-zoom": "^1.1.0",
+    "sass": "^1.77.8",
+    "vitepress-plugin-tabs": "^0.5.0"
+  }
+}

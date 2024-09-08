@@ -1,0 +1,21 @@
+# 编辑器
+.vscode
+.idea
+
+# docs
+node_modules
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+
+# composer
+vendor
+composer.lock
+
+# phpcs
+phpcs-report.txt
+
+
+# hook
+hook
+cghooks.lock
