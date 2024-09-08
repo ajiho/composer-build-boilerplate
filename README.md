@@ -12,4 +12,3 @@
 -   [phpunit](https://github.com/sebastianbergmann/phpunit)单元测试
 -   [phpstan](https://github.com/phpstan/phpstan)来检查代码质量(类似 node 生态中的 eslint、stylelint)
 -   默认安装[topthink/framework](https://github.com/top-think/framework)快速设计基于 tp 框架的composer包(可以自己删除)
-test
