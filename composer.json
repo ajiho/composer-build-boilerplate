@@ -2,6 +2,7 @@
     "name": "ajiho/composer-build-boilerplate",
     "description": "A simple template for building a composer package",
     "scripts": {
+        "hook:update": "vendor/bin/cghooks update",
         "post-install-cmd": "cghooks add --ignore-lock",
         "post-update-cmd": "cghooks update",
         "lint": "phpcs -p --standard=phpcs.xml --report-file=phpcs-report.txt",
@@ -59,7 +60,7 @@
             "commit-msg": [
                 "file=`cat $1`",
                 "COMMIT_REGEX='^(fixup! )*?(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\\([a-z ]+\\))?: .+$'",
-                "if ! grep -qE \"$COMMIT_REGEX\" \"$file\"; then",
+                "if ! [[ $file =~ $COMMIT_REGEX ]]; then",
                 "  echo 'Invalid commit message, aborting... See https://www.conventionalcommits.org/en/v1.0.0/#summary' >&2",
                 "  exit 1",
                 "fi"
@@ -70,7 +71,7 @@
         }
     },
     "require-dev": {
-        "brainmaestro/composer-git-hooks": "^2.8",
-        "squizlabs/php_codesniffer": "^3.10"
+        "brainmaestro/composer-git-hooks": "^2.8.5",
+        "squizlabs/php_codesniffer": "^3.10.2"
     }
 }
