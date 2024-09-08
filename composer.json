@@ -54,14 +54,12 @@
             },
             "pre-commit": [
                 "echo committing as $(git config user.name)",
-                "composer lint",
-                "composer test"
+                "composer lint"
             ],
             "commit-msg": [
                 "file=`cat $1`",
-                "fi",
                 "COMMIT_REGEX='^(fixup! )*?(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\\([a-z ]+\\))?: .+$'",
-                "if ! grep -qE \"$COMMIT_REGEX\" \"$1\"; then",
+                "if ! grep -qE \"$COMMIT_REGEX\" \"$file\"; then",
                 "  echo 'Invalid commit message, aborting... See https://www.conventionalcommits.org/en/v1.0.0/#summary' >&2",
                 "  exit 1",
                 "fi"

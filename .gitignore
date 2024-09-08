@@ -17,5 +17,5 @@ phpcs-report.txt
 
 
 # hook
-hook
+hooks
 cghooks.lock
