@@ -2,7 +2,7 @@
     "name": "ajiho/composer-build-boilerplate",
     "description": "A simple template for building a composer package",
     "scripts": {
-        "hook:update": "vendor/bin/cghooks update",
+        "hooks": "cghooks update",
         "post-install-cmd": "cghooks add --ignore-lock",
         "post-update-cmd": "cghooks update",
         "lint": "phpcs -p --standard=phpcs.xml --report-file=phpcs-report.txt",
@@ -58,16 +58,19 @@
                 "composer lint"
             ],
             "commit-msg": [
-                "file=`cat $1`",
-                "COMMIT_REGEX='^(fixup! )*?(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\\([a-z ]+\\))?: .+$'",
-                "if ! [[ $file =~ $COMMIT_REGEX ]]; then",
-                "  echo 'Invalid commit message, aborting... See https://www.conventionalcommits.org/en/v1.0.0/#summary' >&2",
-                "  exit 1",
+                "# 获取提交信息",
+                "commit_msg=$(cat \"$1\")",
+                "# 定义符合 Conventional Commits 规范的正则表达式",
+                "COMMIT_REGEX='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\\([a-z ]+\\))?: .+$'",
+                "# 验证提交信息是否符合正则表达式",
+                "if ! [[ $commit_msg =~ $COMMIT_REGEX ]]; then",
+                "   echo 'Invalid commit message, aborting... See https://www.conventionalcommits.org/en/v1.0.0/#summary' >&2",
+                "   exit 1",
                 "fi"
             ]
         },
         "config": {
-            "composer-build-boilerplate": "config/composer-build-boilerplate.php"
+            "foo": "config/foo.php"
         }
     },
     "require-dev": {

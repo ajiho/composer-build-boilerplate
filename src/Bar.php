@@ -2,7 +2,7 @@
 
 namespace Ajiho\ComposerBuildBoilerplate;
 
-class Weather
+class Bar
 {
      /**
      * @var string
@@ -10,7 +10,7 @@ class Weather
     protected $key;
 
     /**
-     * Weather constructor.
+     * constructor.
      *
      * @param string $key
      */
